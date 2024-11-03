@@ -27,7 +27,7 @@ const { refresh: onSubmit, status: forgotStatus } = useFetch<any>("forgot-passwo
 <template>
   <div class="space-y-4">
     <UForm ref="form" :state="state" @submit="onSubmit" class="space-y-4">
-      <UFormGroup label="Email" name="email" required>
+      <UFormGroup :label="$t('login.email')" name="email" required>
         <UInput
           v-model="state.email"
           placeholder="you@example.com"
@@ -39,12 +39,12 @@ const { refresh: onSubmit, status: forgotStatus } = useFetch<any>("forgot-passwo
       </UFormGroup>
 
       <div class="flex items-center justify-end space-x-4">
-        <UButton type="submit" label="Send reset link" :loading="forgotStatus === 'pending'" />
+        <UButton class="w-full justify-center" type="submit" :label="$t('forgot_password.btn_action')" :loading="forgotStatus === 'pending'" />
       </div>
     </UForm>
 
-    <div class="text-sm">
-      <NuxtLink class="text-sm" to="/auth/login">Back to Log In</NuxtLink>
+    <div class="text-sm text-center">
+      <NuxtLink class="text-sm" to="/auth/login">{{ $t('forgot_password.back_login') }}</NuxtLink>
     </div>
   </div>
 </template>

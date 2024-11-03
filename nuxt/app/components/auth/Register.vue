@@ -40,11 +40,11 @@ const { refresh: onSubmit, status: registerStatus } = useFetch<any>("register", 
 <template>
   <div class="space-y-4">
     <UForm ref="form" :state="state" @submit="onSubmit" class="space-y-4">
-      <UFormGroup label="Name" name="name" required>
+      <UFormGroup :label="$t('register.fullname')" name="name" required>
         <UInput v-model="state.name" type="text" autofocus />
       </UFormGroup>
 
-      <UFormGroup label="Email" name="email" required>
+      <UFormGroup :label="$t('login.email')" name="email" required>
         <UInput
           v-model="state.email"
           placeholder="you@example.com"
@@ -55,16 +55,16 @@ const { refresh: onSubmit, status: registerStatus } = useFetch<any>("register", 
       </UFormGroup>
 
       <UFormGroup
-        label="Password"
+        :label="$t('login.password')"
         name="password"
-        hint="min 8 characters"
+        :hint="$t('register.password_hint')"
         :ui="{ hint: 'text-xs text-gray-500 dark:text-gray-400' }"
         required
       >
         <UInput v-model="state.password" type="password" autocomplete="off" />
       </UFormGroup>
 
-      <UFormGroup label="Repeat Password" name="password_confirmation" required>
+      <UFormGroup :label="$t('register.password_repeat')" name="password_confirmation" required>
         <UInput
           v-model="state.password_confirmation"
           type="password"
@@ -73,13 +73,13 @@ const { refresh: onSubmit, status: registerStatus } = useFetch<any>("register", 
       </UFormGroup>
 
       <div class="flex items-center justify-end space-x-4">
-        <UButton type="submit" label="Sign Up" :loading="registerStatus === 'pending'" />
+        <UButton class="w-full justify-center" type="submit" :label="$t('register.btn_action')" :loading="registerStatus === 'pending'" />
       </div>
     </UForm>
 
-    <div class="text-sm">
-      Already have an account?
-      <NuxtLink class="text-sm" to="/auth/login">Login now</NuxtLink>
+    <div class="text-sm text-center">
+      {{ $t('register.already_have_account') }}
+      <NuxtLink class="text-sm" to="/auth/login">{{ $t('register.login_now') }}</NuxtLink>
     </div>
   </div>
 </template>

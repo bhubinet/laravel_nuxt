@@ -82,24 +82,24 @@ onBeforeUnmount(() => window.removeEventListener("message", handleMessage));
 
 <template>
   <div class="space-y-4">
-    <div class="flex gap-4">
+    <div class="flex flex-col gap-4">
       <UButton
         v-for="(provider, key) in providers"
         :key="key"
         :loading="provider.loading"
         :icon="provider.icon"
         :color="provider.color"
-        :label="provider.name"
+        :label="$t(provider.name)"
         size="lg"
         class="w-full flex items-center justify-center"
         @click="loginVia(key as string)"
       />
     </div>
 
-    <UDivider label="OR" />
+    <UDivider :label="$t('login.or')" />
 
     <UForm ref="form" :state="state" @submit="onSubmit" class="space-y-4">
-      <UFormGroup label="Email" name="email" required>
+      <UFormGroup :label="$t('login.email')" name="email" required>
         <UInput
           v-model="state.email"
           placeholder="you@example.com"
@@ -110,23 +110,24 @@ onBeforeUnmount(() => window.removeEventListener("message", handleMessage));
         />
       </UFormGroup>
 
-      <UFormGroup label="Password" name="password" required>
+      <UFormGroup :label="$t('login.password')" name="password" required>
         <UInput v-model="state.password" type="password" />
       </UFormGroup>
 
-      <UTooltip text="for 1 month" :popper="{ placement: 'right' }">
-        <UCheckbox v-model="state.remember" label="Remember me" />
+      <UTooltip :text="$t('login.remember_duration')" :popper="{ placement: 'right' }">
+        <UCheckbox v-model="state.remember" :label="$t('login.remember_me')" />
       </UTooltip>
 
       <div class="flex items-center justify-end space-x-4">
-        <NuxtLink class="text-sm" to="/auth/forgot">Forgot your password?</NuxtLink>
-        <UButton type="submit" label="Login" :loading="loginStatus === 'pending'" />
+        <NuxtLink class="text-sm" to="/auth/forgot">{{ $t('login.forgot_your_password') }}</NuxtLink>
       </div>
+
+      <UButton class="w-full justify-center" type="submit" :label="$t('login.btn_action')" :loading="loginStatus === 'pending'" />
     </UForm>
 
-    <div class="text-sm">
-      Don't have an account yet?
-      <NuxtLink class="text-sm" to="/auth/register">Sign up now</NuxtLink>
+    <div class="text-sm text-center">
+      {{ $t('login.dont_have_account') }}
+      <NuxtLink class="text-sm" to="/auth/register">{{ $t('login.register_now') }}</NuxtLink>
     </div>
   </div>
 </template>

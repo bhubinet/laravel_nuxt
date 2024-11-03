@@ -112,7 +112,11 @@ defineShortcuts({
             </div>
           </template>
         </UDropdown>
-        <UButton v-else label="Log In" to="/auth/login" variant="ghost" color="gray" />
+        <div v-else>
+          <UButton :label="$t('login.btn_action')" to="/auth/login" variant="ghost" color="gray" />
+          <UButton :label="$t('register.btn_action')" to="/auth/register" variant="ghost" color="gray" />
+        </div>
+
 
         <UButton
           class="lg:hidden"
