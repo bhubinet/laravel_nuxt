@@ -2,14 +2,14 @@ name: Laravel
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
     paths:
     - 'app/**'
     - 'config/**'
     - 'tests/**'
     - 'routes/**'
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
     paths:
     - 'app/**'
     - 'config/**'

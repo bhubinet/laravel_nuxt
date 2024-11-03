@@ -2,6 +2,19 @@
 const auth = useAuthStore();
 const { $storage } = useNuxtApp();
 
+// I18n
+const { t } = useI18n();
+const { locale, locales } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+const localePath = useLocalePath()
+
+const availableLocales = computed(() => {
+  return locales.value.filter(i => i.code !== locale.value)
+})
+
+const displayLangSwitcher = false
+//
+
 const userItems = [
   [
     {
@@ -12,45 +25,26 @@ const userItems = [
   ],
   [
     {
-      label: "Account",
-      to: "/account/general",
+      label: t('account.my_profile'),
+      to: localePath("/account/general"),
       icon: "i-heroicons-user",
     },
     {
-      label: "Devices",
-      to: "/account/devices",
+      label: t('account.devices'),
+      to: localePath("/account/devices"),
       icon: "i-heroicons-device-phone-mobile",
     },
   ],
   [
     {
-      label: "Sign out",
+      label: t('account.sign_out'),
       click: auth.logout,
       icon: "i-heroicons-arrow-left-on-rectangle",
     },
   ],
 ];
 
-const navItems = [
-  {
-    label: "Nuxt.js Docs",
-    to: "https://nuxt.com/docs/getting-started/introduction",
-    target: "_blank",
-    icon: "i-heroicons-link-20-solid",
-  },
-  {
-    label: "Nuxt UI",
-    to: "https://ui.nuxt.com/getting-started",
-    target: "_blank",
-    icon: "i-heroicons-link-20-solid",
-  },
-  {
-    label: "Laravel 11.x",
-    to: "https://laravel.com/docs/11.x",
-    target: "_blank",
-    icon: "i-heroicons-link-20-solid",
-  },
-];
+const navItems = [];
 
 const isSideOpen = ref(false);
 const openSide = () => {
@@ -79,7 +73,7 @@ defineShortcuts({
           <li v-for="item in navItems" class="relative">
             <NuxtLink
               class="text-sm/6 font-semibold flex items-center gap-1 hover:text-primary"
-              :to="item.to"
+              :to="localePath(item.to)"
               :target="item.target"
               >{{ item.label }}</NuxtLink
             >
@@ -88,6 +82,10 @@ defineShortcuts({
       </nav>
 
       <div class="flex items-center justify-end gap-3 lg:flex-1">
+        <NuxtLink v-if="displayLangSwitcher" v-for="locale in availableLocales" :key="locale.code" :to="switchLocalePath(locale.code)">
+          {{ locale.name }}
+        </NuxtLink>
+
         <AppTheme />
 
         <UDropdown
@@ -100,12 +98,12 @@ defineShortcuts({
             size="sm"
             :src="$storage(auth.user.avatar)"
             :alt="auth.user.name"
-            :ui="{ rounded: 'rounded-md' }"
+            :ui="{ rounded: 'rounded-full' }"
           />
 
           <template #overview>
             <div class="text-left">
-              <p>Signed in as</p>
+              <p>{{ $t('account.signed_in_as') }}</p>
               <p class="truncate font-medium text-gray-900 dark:text-white">
                 {{ auth.user.email }}
               </p>
@@ -113,8 +111,8 @@ defineShortcuts({
           </template>
         </UDropdown>
         <div v-else>
-          <UButton :label="$t('login.btn_action')" to="/auth/login" variant="ghost" color="gray" />
-          <UButton :label="$t('register.btn_action')" to="/auth/register" variant="ghost" color="gray" />
+          <UButton :label="$t('login.btn_action')" :to="localePath('/auth/login')" variant="ghost" color="gray" />
+          <UButton :label="$t('register.btn_action')" :to="localePath('/auth/register')" variant="ghost" color="gray" />
         </div>
 
 

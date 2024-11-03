@@ -3,17 +3,20 @@ definePageMeta({
   middleware: ["auth"],
 });
 
+const { t } = useI18n();
+const localePath = useLocalePath()
+
 const links = [
   [
     {
-      label: "Account",
+      label: t('account.general'),
       icon: "i-heroicons-user",
-      to: "/account/general",
+      to: localePath("/account/general"),
     },
     {
-      label: "Devices",
+      label: t('account.devices'),
       icon: "i-heroicons-device-phone-mobile",
-      to: "/account/devices",
+      to: localePath("/account/devices"),
     },
   ],
 ];

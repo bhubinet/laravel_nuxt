@@ -70,7 +70,7 @@ const onSelect = async (e: any) => {
       />
 
       <UTooltip
-        text="Upload"
+        :text="$t('general.upload')"
         class="absolute top-0 end-0 -m-2"
         :popper="{ placement: 'right' }"
       >
@@ -85,7 +85,8 @@ const onSelect = async (e: any) => {
         />
       </UTooltip>
       <UTooltip
-        text="Delete"
+        v-if="value !== null"
+        :text="$t('general.delete')"
         class="absolute bottom-0 end-0 -m-2"
         :popper="{ placement: 'right' }"
       >
@@ -108,8 +109,8 @@ const onSelect = async (e: any) => {
       />
     </div>
     <div class="text-sm opacity-80">
-      <div>Max upload size: {{ maxSize }}Mb</div>
-      <div>Accepted formats: {{ accept }}</div>
+      <div>{{ $t('upload.max_size', {size:  maxSize}) }}</div>
+      <div>{{ $t('upload.allowed_formats', {formats:  accept}) }}</div>
     </div>
   </div>
 </template>

@@ -56,21 +56,21 @@ const { refresh: sendResetPasswordEmail, status: resetPasswordEmailStatus } = us
       @submit="onSubmit"
       class="space-y-4"
     >
-      <UFormGroup label="Current Password" name="current_password" required>
+      <UFormGroup :label="$t('account.current_password')" name="current_password" required>
         <UInput v-model="state.current_password" type="password" autocomplete="off" />
       </UFormGroup>
 
       <UFormGroup
-        label="New Password"
+        :label="$t('account.new_password')"
         name="password"
-        hint="min 8 characters"
+        :hint="$t('register.password_hint')"
         :ui="{ hint: 'text-xs text-gray-500 dark:text-gray-400' }"
         required
       >
         <UInput v-model="state.password" type="password" autocomplete="off" />
       </UFormGroup>
 
-      <UFormGroup label="Repeat Password" name="password_confirmation" required>
+      <UFormGroup :label="$t('register.password_repeat')" name="password_confirmation" required>
         <UInput
           v-model="state.password_confirmation"
           type="password"
@@ -78,8 +78,8 @@ const { refresh: sendResetPasswordEmail, status: resetPasswordEmailStatus } = us
         />
       </UFormGroup>
 
-      <div class="pt-2">
-        <UButton type="submit" label="Save" :loading="accountPasswordStatus === 'pending'" />
+      <div class="pt-2 flex justify-end">
+        <UButton type="submit" :label="$t('general.save')" :loading="accountPasswordStatus === 'pending'" />
       </div>
     </UForm>
 

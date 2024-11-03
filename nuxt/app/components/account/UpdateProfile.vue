@@ -64,11 +64,11 @@ const { refresh: onSubmit, status: accountUpdateStatus } = useFetch<any>("accoun
       />
     </UFormGroup>
 
-    <UFormGroup label="Name" name="name" required>
+    <UFormGroup :label="$t('register.fullname')" name="name" required>
       <UInput v-model="state.name" type="text" />
     </UFormGroup>
 
-    <UFormGroup label="Email" name="email" required>
+    <UFormGroup :label="$t('login.email')" name="email" required>
       <UInput
         v-model="state.email"
         placeholder="you@example.com"
@@ -94,8 +94,8 @@ const { refresh: onSubmit, status: accountUpdateStatus } = useFetch<any>("accoun
       ]"
     />
 
-    <div class="pt-2">
-      <UButton type="submit" label="Save" :loading="accountUpdateStatus === 'pending'" />
+    <div class="pt-2 flex justify-end">
+      <UButton type="submit" :label="$t('general.save')" :loading="accountUpdateStatus === 'pending'" />
     </div>
   </UForm>
 </template>

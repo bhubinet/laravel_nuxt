@@ -3,6 +3,15 @@ export default defineI18nConfig(() => ({
   locale: 'en',
   messages: {
     en: {
+      general: {
+        save: 'Save',
+        upload: 'Upload',
+        delete: 'Delete',
+      },
+      upload: {
+        max_size: 'Max size: {size}MB',
+        allowed_formats: 'Allowed formats: {formats}',
+      },
       login: {
         title: 'Sign in to ...',
         or: 'Or login with email',
@@ -30,9 +39,31 @@ export default defineI18nConfig(() => ({
         title: 'Reset your password',
         btn_action: 'Send reset link',
         back_login: 'Back to login page',
+      },
+      account: {
+        general: 'Account settings',
+        my_profile: 'My profile',
+        devices: 'My devices',
+        signed_in_as: 'Signed in as',
+        sign_out: 'Sign out',
+        current_password: 'Current password',
+        new_password: 'New password',
+        profile_information: 'Profile information',
+        profile_information_desc: 'Update your account\'s profile information and email address.',
+        update_password: 'Update password',
+        update_password_desc: 'Ensure your account is using a long, random password to stay secure.'
       }
     },
     fr: {
+      general: {
+        save: 'Enregistrer',
+        upload: 'Télécharger',
+        delete: 'Supprimer',
+      },
+      upload: {
+        max_size: 'Taille max : {size}MB',
+        allowed_formats: 'Formats autorisés : {formats}',
+      },
       login: {
         title: 'Se connecter à ...',
         or: 'Ou connectez-vous avec votre email',
@@ -60,6 +91,19 @@ export default defineI18nConfig(() => ({
         title: 'Réinitialiser votre mot de passe',
         btn_action: 'Envoyer le lien de réinitialisation',
         back_login: 'Retour à la page de connexion',
+      },
+      account: {
+        general: 'Paramètres du compte',
+        my_profile: 'Mon profil',
+        devices: 'Mes appareils',
+        signed_in_as: 'Connecté en tant que',
+        sign_out: 'Se déconnecter',
+        current_password: 'Mot de passe actuel',
+        new_password: 'Nouveau mot de passe',
+        profile_information: 'Informations du profil',
+        profile_information_desc: 'Mettez à jour les informations de profil et l\'adresse e-mail de votre compte.',
+        update_password: 'Mettre à jour le mot de passe',
+        update_password_desc: 'Assurez-vous que votre compte utilise un mot de passe long et aléatoire pour rester sécurisé.'
       }
     }
   }

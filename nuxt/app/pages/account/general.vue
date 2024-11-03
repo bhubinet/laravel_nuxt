@@ -6,9 +6,9 @@ useSeoMeta({
 <template>
   <UCard :ui="{ body: { base: 'grid grid-cols-12 gap-6 md:gap-8' } }">
     <div class="col-span-12 lg:col-span-4">
-      <div class="text-lg font-semibold mb-2">Profile information</div>
+      <div class="text-lg font-semibold mb-2">{{ $t('account.profile_information') }}</div>
       <div class="text-sm opacity-80">
-        Update your account's profile information and email address.
+        {{ $t('account.profile_information_desc') }}
       </div>
     </div>
     <div class="col-span-12 lg:col-span-8">
@@ -16,9 +16,9 @@ useSeoMeta({
     </div>
     <UDivider class="col-span-12" />
     <div class="col-span-12 lg:col-span-4">
-      <div class="text-lg font-semibold mb-2">Update Password</div>
+      <div class="text-lg font-semibold mb-2">{{ $t('account.update_password') }}</div>
       <div class="text-sm opacity-80">
-        Ensure your account is using a long, random password to stay secure.
+        {{ $t('account.update_password_desc') }}
       </div>
     </div>
     <div class="col-span-12 lg:col-span-8">
