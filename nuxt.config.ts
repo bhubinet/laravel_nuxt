@@ -49,13 +49,7 @@ export default defineNuxtConfig({
   /**
    * @see https://v3.nuxtjs.org/api/configuration/nuxt.config#modules
    */
-  modules: [
-    '@nuxt/ui',
-    '@nuxt/image',
-    '@pinia/nuxt',
-    'dayjs-nuxt',
-    'nuxt-security',
-  ],
+  modules: ['@nuxt/ui', '@nuxt/image', '@pinia/nuxt', 'dayjs-nuxt', 'nuxt-security', '@nuxtjs/i18n'],
 
   image: {
     domains: [
@@ -98,11 +92,20 @@ export default defineNuxtConfig({
       storageBase: import.meta.env.APP_URL + '/storage/',
       providers: {
         google: {
-          name: "Google",
-          icon: "",
+          name: "login.google",
+          icon: "logos:google-icon",
+          color: "gray",
+        },
+        github: {
+          name: "login.github",
+          icon: "logos:github-icon",
           color: "gray",
         },
       },
     },
   },
+
+  i18n: {
+    vueI18n: './i18n.config.ts' // if you are using custom path, default
+  }
 })

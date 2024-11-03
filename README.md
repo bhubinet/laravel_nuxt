@@ -1,4 +1,4 @@
-![preview](https://github.com/k2so-dev/laravel-nuxt/assets/15279423/0c427167-a683-4c9d-89c2-ada46f7c8da2)
+Forked from https://github.com/k2so-dev/laravel-nuxt
 
 # Laravel Nuxt Boilerplate
 
@@ -47,6 +47,7 @@ The goal of the project is to create a template for development on Laravel and N
  - Device management
  - [**ofetch**](https://github.com/unjs/ofetch) preset for working with Laravel API, which makes it possible
 use $**fetch** without having to resort to custom $**fetch** wrappers.
+ - [**Nuxt I18n**](https://i18n.nuxtjs.org/) Internationalization
 
 ## Requirements
 
@@ -197,10 +198,6 @@ All built-in middleware from Laravel + middleware based on roles [**Spatie Larav
 ### Route list
 
 ![routes](https://github.com/k2so-dev/laravel-nuxt/assets/15279423/39bb3021-a4d1-4472-8320-5a397809904d)
-
-### Demo
-
-https://github.com/k2so-dev/laravel-nuxt/assets/15279423/9b134491-1444-4323-a7a3-d87833dcdc67
 
 ## Links
 * [Nuxt 3](https://nuxt.com/)
