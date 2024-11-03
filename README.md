@@ -4,9 +4,8 @@ Forked from https://github.com/k2so-dev/laravel-nuxt
 
 [![](https://img.shields.io/badge/Laravel-v11-ff2e21.svg)](https://laravel.com)
 [![](https://img.shields.io/badge/nuxt.js-v3-04C690.svg)](https://nuxt.com)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fk2so-dev%2Flaravel-nuxt.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fk2so-dev%2Flaravel-nuxt?ref=badge_shield)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/k2so-dev/laravel-nuxt/laravel.yml)](https://github.com/k2so-dev/laravel-nuxt/actions/workflows/laravel.yml)
-[![CodeQL](https://github.com/k2so-dev/laravel-nuxt/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/k2so-dev/laravel-nuxt/actions/workflows/github-code-scanning/codeql)
+[![Laravel](https://github.com/bhubinet/laravel_nuxt/actions/workflows/laravel.yml/badge.svg)](https://github.com/bhubinet/laravel_nuxt/actions/workflows/laravel.yml)
+[![CodeQL](https://github.com/bhubinet/laravel_nuxt/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/bhubinet/laravel_nuxt/actions/workflows/github-code-scanning/codeql)
 
 The goal of the project is to create a template for development on Laravel and Nuxt with maximum API performance, ready-made authorization methods, image uploading with optimization and ready-made user roles.
 
@@ -193,17 +192,8 @@ The following middleware is supported:
 
 All built-in middleware from Laravel + middleware based on roles [**Spatie Laravel Permissions Middleware**](https://spatie.be/docs/laravel-permission/v6/basic-usage/middleware)
 
-## Examples
-
-### Route list
-
-![routes](https://github.com/k2so-dev/laravel-nuxt/assets/15279423/39bb3021-a4d1-4472-8320-5a397809904d)
-
 ## Links
 * [Nuxt 3](https://nuxt.com/)
 * [Nuxt UI](https://ui.nuxt.com/)
 * [Tailwind CSS](https://tailwindcss.com/)
 * [Laravel 11x](https://laravel.com/docs/11.x)
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fk2so-dev%2Flaravel-nuxt.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fk2so-dev%2Flaravel-nuxt?ref=badge_large)
