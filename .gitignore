@@ -42,13 +42,17 @@ logs
 .idea
 
 # Local env files
-.env
 .env.*
 !.env.example
 
+# Octane
 **/caddy
 frankenphp
 frankenphp-worker.php
 
 # Docker
 docker-compose-*.yml
+
+# Redis
+redis.conf
+dump.rdb
